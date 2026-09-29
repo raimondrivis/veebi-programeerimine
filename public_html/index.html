@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Rivis, veebiprogrammeerimine</title>
+</head>
+<body>
+
+<img src="veebiprogrammeerimine_2026_AA.png" width="500">
+
+<h1>Rivis, veebiprogrammeerimine</h1>
+
+<p>Pole tõsine veebileht.</p>
+
+<p>
+    Tund toimus
+    <a href="https://tlu.ee">Tallinna Ülikoolis</a>
+</p>
+
+<h2>Lehed</h2>
+
+<p><a href="vanasona.html">Tänane vanasõna</a></p>
+
+<p><a href="miks.html">Miks ma tulin TLÜ-sse õppima?</a></p>
+
+<h2>Aeg</h2>
+
+<p>Nädalapäev: <span id="day"></span></p>
+
+<p>Kuupäev: <span id="date"></span></p>
+
+<p>Kellaaeg: <span id="time"></span></p>
+
+<script>
+
+const dayNames = [
+    "pühapäev",
+    "esmaspäev",
+    "teisipäev",
+    "kolmapäev",
+    "neljapäev",
+    "reede",
+    "laupäev"
+];
+
+const folkMonths = [
+    "näärikuu",
+    "küünlakuu",
+    "paastukuu",
+    "jürikuu",
+    "lehekuu",
+    "jaanipäevakuu",
+    "heinakuu",
+    "lõikuskuu",
+    "mihklikuu",
+    "viinakuu",
+    "kooljakuu",
+    "jõulukuu"
+];
+
+const now = new Date();
+
+document.getElementById("day").innerHTML =
+    dayNames[now.getDay()];
+
+document.getElementById("date").innerHTML =
+    now.getDate() + ". " +
+    folkMonths[now.getMonth()] + " " +
+    now.getFullYear();
+
+document.getElementById("time").innerHTML =
+    now.toLocaleTimeString("et-EE");
+
+</script>
+
+</body>
+</html>
